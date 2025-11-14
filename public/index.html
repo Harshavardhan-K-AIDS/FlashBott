@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FlashBott</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="app-header">
+        <h1>FlashBott</h1>
+        <div class="user-section">
+          <div class="user-info-wrapper">
+            <span class="user-label">Logged in as</span>
+            <span id="user-info" class="user-email">Not logged in</span>
+          </div>
+          <button id="logout-btn" class="logout-btn hidden">Logout</button>
+        </div>
+      </header>
+
+      <main class="main-area">
+        <!-- Auth section -->
+        <section id="auth-section" class="auth-section">
+          <h2>Welcome to Your Personal AI Assistant</h2>
+          <p style="color: #666; margin-bottom: 20px;">Sign in to start chatting with your personalized AI</p>
+          <input id="email" type="email" placeholder="Email address" />
+          <input id="password" type="password" placeholder="Password" />
+          <button id="login-btn">Login</button>
+          <button id="signup-btn">Create Account</button>
+          <p id="auth-error" class="error"></p>
+        </section>
+
+        <!-- Chat section -->
+        <section id="chat-section" class="chat-section hidden">
+          <div class="chat-header">
+            <h3>Chat History</h3>
+            <button id="clear-chat-btn" class="clear-chat-btn">Clear Chat</button>
+          </div>
+          <div id="chat-window" class="chat-window">
+            <div class="empty-state">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+              </svg>
+              <h3>Start a conversation</h3>
+              <p>Your chat history will appear here</p>
+            </div>
+          </div>
+
+          <form id="chat-form">
+            <input
+              type="text"
+              id="user-input"
+              placeholder="Type your message..."
+              autocomplete="off"
+              required
+            />
+            <button type="submit" id="send-btn">Send</button>
+          </form>
+          <div id="status" class="status">Ready</div>
+        </section>
+      </main>
+    </div>
+
+    <!-- Marked.js for markdown rendering -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <!-- Firebase & app script -->
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
